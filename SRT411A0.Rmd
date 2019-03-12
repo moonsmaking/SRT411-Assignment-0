@@ -1,0 +1,120 @@
+---
+title: "Assignment0"
+output: pdf_document
+---
+1) Todo: Calculator
+```{r}
+ ((2018-2014)/(2014-1994))*100
+```
+
+2) Todo: Functions
+```{r}
+m <-(2018 - 2014)
+x <- (2014 - 1994)
+a <- ((m/x)*100)
+a
+```
+3) Todo: Workplace
+```{r}
+b= c(4,5,8,11)
+sum(b)
+```
+4)Todo: Plots
+```{r}
+f = rnorm(100)
+plot(f)
+```
+
+5)Todo: Help
+```{r}
+help (sqrt)
+
+```
+
+6)Todo: Data Structures
+```{r}
+P= seq(from= 31, to= 60)
+Q= (matrix(data= P, ncol=5, nrow=6))
+Q
+```
+7)Todo: Lists
+```{r}
+x1= rnorm(100)
+x2= rnorm(100)
+x3= rnorm(100)
+t= data.frame(a = x1, b=(x1+x2), c= (x1+x2+x3))
+plot(t)
+
+```
+
+8)Todo: Graphics
+```{r}
+plot(t$a, type="l", ylim=range(t),
+     lwd=3, col=rgb(1,0,0,0.3))
+lines(t$b, type="s", lwd=2,
+      col=rgb(0.3,0.4,0.3,0.9))
+points(t$c, pch=20, cex=4, col=rgb(0,0,1,0.3))
+```
+Explanation: 
+rgb = red, green and blue. This is used for colours in the group.
+
+9) Todo: Not available data 
+```{r}
+sqrt (rnorm(100))
+```
+You get NaNs, not a number. 
+
+10) Todo: Reading from a file
+```{r}
+myfile<- read.table(file="tst1.txt" , header =TRUE)
+myvar <- myfile$g * 5
+write.table (myvar, file="tst2.txt")
+```
+
+11)Todo: Dates
+```{r}
+dates= strptime(c("20190310", "20191224","20190421"),format="%Y%m%d")
+presents = c(0,7,5)
+plot(dates,presents)
+lines(dates,presents)
+```
+
+
+
+12)Todo: For-loop
+```{r}
+myvec = seq(from=1, to=100)
+s = c()
+for(i in 1:length(myvec)) 
+{
+  if(myvec[i] < 5) {
+    s[i] <- (myvec[i] *10)
+  }else if (myvec[i] > 90){
+    s[i] <- (myvec[i] *10)
+  }else{
+    s[i] = (myvec[i]*0.1)
+  }
+}
+s
+```
+
+14)Todo: Writing your own functions
+```{r}
+myfunc = function(argv1)
+{
+  S=c()
+  for(i in 1:length(argv1)) 
+  {
+    if(argv1[i] < 5) {
+      S[i] <- (argv1[i] *10)
+    }else if (argv1[i] > 90){
+      S[i] <- (argv1[i] *10)
+    }else{
+      S[i] = (argv1[i]*0.1)
+    }
+  }
+  S
+}
+myfunc(argv1 = c(2:50))
+```
+
